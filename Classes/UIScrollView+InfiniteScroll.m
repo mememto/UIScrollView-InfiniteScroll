@@ -46,6 +46,8 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
  */
 @property BOOL initialized;
 
+@property (nonatomic, assign) CGFloat infiniteScrollIndicatorHeight;
+
 /**
  *  A flag that indicates whether loading is in progress.
  */
@@ -185,7 +187,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
 - (void)setInfiniteScrollIndicatorView:(UIView*)indicatorView wihtIndicatorViewHeight:(CGFloat)h {
     // make sure indicator is initially hidden
     indicatorView.hidden = YES;
-    self.indicatorHeight = h;
+    self.pb_infiniteScrollState.infiniteScrollIndicatorHeight = h;
     
     self.pb_infiniteScrollState.indicatorView = indicatorView;
 }
@@ -372,7 +374,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     UIEdgeInsets contentInset = self.contentInset;
     
     // Make a room to accommodate indicator view
-    contentInset.bottom += self.indicatorHeight;
+    contentInset.bottom += self.pb_infiniteScrollState.infiniteScrollIndicatorHeight;
     
     // We have to pad scroll view when content height is smaller than view bounds.
     // This will guarantee that indicator view appears at the very bottom of scroll view.
@@ -383,7 +385,7 @@ static const void *kPBInfiniteScrollStateKey = &kPBInfiniteScrollStateKey;
     contentInset.bottom += extraBottomInset;
     
     // Save indicator view inset
-    state.indicatorInset = self.indicatorHeight;
+    state.indicatorInset = self.pb_infiniteScrollState.infiniteScrollIndicatorHeight;
     
     // Save extra inset
     state.extraBottomInset = extraBottomInset;

@@ -36,8 +36,6 @@
  */
 @property (nonatomic) CGFloat infiniteScrollIndicatorMargin;
 
-@property (nonatomic) CGFloat indicatorHeight;
-
 /**
  *  Setup infinite scroll handler
  *
