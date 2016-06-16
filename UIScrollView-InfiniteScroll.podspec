@@ -3,12 +3,12 @@ Pod::Spec.new do |s|
   s.version  = '0.7.3'
   s.license  = 'MIT'
   s.summary  = 'UIScrollView infinite scroll category.'
-  s.homepage = 'https://github.com/pronebird/UIScrollView-InfiniteScroll'
+  s.homepage = 'https://github.com/mememto/UIScrollView-InfiniteScroll'
   s.authors  = {
     'Andrej Mihajlov' => 'and@codeispoetry.ru'
   }
   s.source   = {
-    :git => 'https://github.com/pronebird/UIScrollView-InfiniteScroll.git',
+    :git => 'https://github.com/mememto/UIScrollView-InfiniteScroll.git',
     :tag => s.version.to_s
   }
   s.source_files = 'Classes/*.{h,m}'
